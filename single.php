@@ -3,18 +3,51 @@
   <div class="p-4 mx-auto container">
     <div class="md:flex">
       <div class="md:w-2/3 md:p-4">
-        <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
-        <h1 class="text-center"><?php the_title(); ?></h1>
-        <?php if(has_post_thumbnail()) : ?>
-        <div class="img-container text-center py-2">
-          <img src="<?= get_the_post_thumbnail_url('', 'full') ?>" alt="<?php the_title() ?>">
-        </div>
-        <?php endif ; ?>
-        <div>
-          <?php the_content(); ?>
-        </div>
-        <p><?php the_date(); ?></p>
-        <?php endwhile; endif ?>
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+            <div class="swiper slider">
+              <div class="swiper-wrapper">
+                <?php
+                for ($i = 0; $i < 8; $i++) :
+                  if (!get_field('image_' . $i)) {
+                    break;
+                  }
+                ?>
+                  <div class="swiper-slide">
+                    <img src="<?= esc_url(get_field('image_' . $i)); ?>" alt="<?= the_title() . '-' . $i; ?>">
+                  </div>
+                <?php endfor; ?>
+              </div>
+
+              <div class="swiper-pagination"></div>
+
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+            <!-- サムネイル -->
+            <div class="swiper slider-thumbnail">
+              <div class="swiper-wrapper">
+                <?php
+                for ($i = 0; $i < 8; $i++) :
+                  if (!get_field('image_' . $i)) {
+                    break;
+                  }
+                ?>
+                  <div class="swiper-slide">
+                    <img src="<?= esc_url(get_field('image_' . $i)); ?>" alt="<?= the_title() . '-' . $i; ?>">
+                  </div>
+                <?php endfor; ?>
+              </div>
+            </div>
+            <div>
+              <h1><?php the_title(); ?></h1>
+              <span class="text-sm"><?php the_date(); ?></span>
+            </div>
+
+            <div>
+              <?php the_content(); ?>
+            </div>
+        <?php endwhile;
+        endif ?>
       </div>
       <div class="md:w-1/3 md:p-4">
         <?php get_sidebar(); ?>

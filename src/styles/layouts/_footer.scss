@@ -2,7 +2,7 @@
 
 .footer {
   padding: 4rem 1rem;
-  background: g.$main_color;
+  background: g.$base_color;
   @include g.mq('md') {
     padding: 4rem 3rem;
   }
@@ -27,7 +27,7 @@
 }
 
 .footer__nav a {
-  color: g.$main_color_cont;
+  color: g.$base_color_cont;
 }
 
 .footer__nav .menu ul, .footer__nav .menu {

@@ -4,14 +4,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  top: 0;
   z-index: 9999;
   width: 100%;
-  background: rgba($color: g.$main_color, $alpha: 0.7);
-  color: g.$main_color_cont;
+  background: g.$main_color_cont;
+  // color: g.$main_color_cont;
   padding: .5rem;
   font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .header__nav {
   display: none;
@@ -20,9 +19,6 @@
   }
 }
 
-.header__nav a {
-  color: g.$main_color_cont;
-}
 
 .header__nav .menu ul {
   display: flex;

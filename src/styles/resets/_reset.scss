@@ -30,9 +30,7 @@ video {
   width: 100%;
 }
 h1 {
-  font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 2rem;
 }
 h2 {
   margin-bottom: 1.5rem;
@@ -165,4 +163,25 @@ iframe {
   .d-sp {
     display: block;
   }
+}
+
+.swiper-container {
+  width: 100%;
+  height: 500px; /* ギャラリーの高さを調整 */
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider-thumbnail .swiper-slide {
+  opacity: .5;
+  transition: opacity .5s;
+  width: calc(100% / 3);
+}
+.slider-thumbnail .swiper-slide.swiper-slide-thumb-active {
+  opacity: 1;
 }
