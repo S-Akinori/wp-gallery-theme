@@ -1,0 +1,10 @@
+.p-tag-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.p-tag-list__item {
+    padding: 0.25rem;
+    margin-left: .5rem;
+    background: #EEE;
+}

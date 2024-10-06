@@ -3,6 +3,7 @@
 .footer {
   padding: 4rem 1rem;
   background: g.$base_color;
+  color: g.$base_color_cont;
   @include g.mq('md') {
     padding: 4rem 3rem;
   }

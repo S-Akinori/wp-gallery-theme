@@ -1,11 +1,9 @@
 <?php 
-$categories = get_categories();
+  $args = array(
+    'count' => true,
+  );
 ?>
 <aside>
-  <h4 class="p-post__title">カテゴリー</h4>
-  <ul class="c-list">
-    <?php foreach($categories as $category): ?>
-    <li class="c-list__item"><a href="<?= home_url('category/'.$category->slug); ?>"><?= $category->name ; ?></a></li>
-    <?php endforeach; ?>
-  </ul>
+  <h4 class="p-post__title mb-4">タグ</h4>
+  <?php get_template_part('template-parts/tag-list', null, $args); ?>
 </aside>

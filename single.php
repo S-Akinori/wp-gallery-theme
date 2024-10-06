@@ -40,16 +40,20 @@
             </div>
             <div>
               <h1><?php the_title(); ?></h1>
-              <span class="text-sm"><?php the_date(); ?></span>
             </div>
-
+            <div class="flex">
+              <span><?php the_date(); ?></span>
+              <div class="flex items-center ml-4">
+                <?php the_tags('<ul class="p-tag-list"><li class="p-tag-list__item">', '</li><li class="p-tag-list__item">', '</li></ul>'); ?>
+              </div>
+            </div>
             <div>
               <?php the_content(); ?>
             </div>
         <?php endwhile;
         endif ?>
       </div>
-      <div class="md:w-1/3 md:p-4">
+      <div class="md:w-1/3 md:p-4 mt-8 md:mt-0">
         <?php get_sidebar(); ?>
       </div>
     </div>

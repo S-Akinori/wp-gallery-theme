@@ -19,6 +19,9 @@
         </div>
       </div>
     </div>
+    <div class="text-center">
+      &copy; <?= date('Y'); ?> <?= bloginfo('title'); ?>
+    </div>
   </div>
 </footer>
 <script src="<?= get_template_directory_uri(); ?>/assets/scripts/main.js"></script>
