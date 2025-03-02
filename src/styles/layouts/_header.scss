@@ -1,0 +1,28 @@
+@use '../global/' as g;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+  width: 100%;
+  background: g.$main_color_cont;
+  // color: g.$main_color_cont;
+  padding: .5rem;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.header__nav {
+  display: none;
+  @include g.mq('md') {
+    display: block;
+  }
+}
+
+
+.header__nav .menu ul {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex-wrap: wrap;
+}

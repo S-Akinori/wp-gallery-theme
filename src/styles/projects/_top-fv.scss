@@ -1,0 +1,52 @@
+@use '../global/' as g;
+
+.p-top-fv {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include g.mq('md') {
+    flex-direction: row;
+    align-items: center;
+  }
+  background: url('images/bg-top-fv.jpg') no-repeat left bottom;
+  height: 100vh;
+}
+.p-top-fv::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // background: rgba($color: #000000, $alpha: 0.4);
+}
+.p-top-fv__content, .p-top-fv__image {
+  position: relative;
+  padding: 1rem;
+  color: g.$main_color_cont;
+  @include g.mq('md') {
+    width: 50%;
+  }
+}
+
+.p-top-fv__content {
+  transition-delay: 300ms;
+}
+.p-top-fv__image {
+  transition-delay: 600ms;
+}
+
+
+.p-top-fv__content__title {
+  font-size: 1.5rem;
+}
+
+// .p-top-fv__image {
+//   height: 100%;
+// }
+
+.p-top-fv__image img {
+  margin-left: auto;
+  height: 100%;
+}

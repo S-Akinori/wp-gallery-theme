@@ -1,0 +1,36 @@
+@use '../global/' as g;
+
+.footer {
+  padding: 4rem 1rem;
+  background: g.$base_color;
+  color: g.$base_color_cont;
+  @include g.mq('md') {
+    padding: 4rem 3rem;
+  }
+}
+
+
+.footer__link-list {
+  @include g.mq('md') {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.footer__link-list__item {
+  padding: .5rem;
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__nav a {
+  color: g.$base_color_cont;
+}
+
+.footer__nav .menu ul, .footer__nav .menu {
+  justify-content: center;
+}
